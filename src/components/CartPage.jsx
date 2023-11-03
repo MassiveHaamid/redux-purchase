@@ -5,6 +5,8 @@ import { addToCart, removeItem, updateQuantity } from '../redux/actions';
 
 function CartPage({ addToCart, removeItem, updateQuantity, products }) {
     const calculateTotal = () => {
+      console.log(products.reduce((total, item) => total + item.price * item.quantity, 0));
+      console.log(products);
       return products.reduce((total, item) => total + item.price * item.quantity, 0);
     };
   
